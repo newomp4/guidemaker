@@ -39,11 +39,16 @@ No build step. No dependencies. Open `index.html` in a browser.
 4. Press `V` later to reselect and edit an older shape.
 5. Use the filmstrip to switch between images. Press `⌘E` to export whichever one is active.
 
-## Usage
+## Opening it
 
-Double-click `index.html` to open it in your browser. That's it.
+Any of these work:
 
-Delete the folder when you're done — there's nothing installed anywhere else.
+- **Double-click `Guidemaker.app`** in the folder — opens the tool in your default browser
+- **Drag `Guidemaker.app` to the Dock** — then single-click anytime
+- **Spotlight** — `⌘Space` → type "Guidemaker" → Enter
+- **Double-click `index.html`** directly — same result, skips the launcher
+
+The `.app` is just a 1 KB launcher that opens the sibling `index.html` in your browser — it's not a separate install. Delete the folder when you're done and everything goes with it.
 
 ## License
 

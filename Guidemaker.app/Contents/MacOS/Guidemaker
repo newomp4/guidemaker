@@ -1,0 +1,17 @@
+#!/bin/bash
+# Launcher for Guidemaker: opens the sibling index.html in the default browser.
+# Finds the folder that contains this .app bundle, regardless of where it lives.
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd -P)"
+# .app/Contents/MacOS -> ../../..  = the folder containing the .app
+APP_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd -P)"
+INDEX="$APP_DIR/index.html"
+
+if [ ! -f "$INDEX" ]; then
+  osascript -e "display alert \"Guidemaker\" message \"Could not find index.html next to this app.\n\nExpected: $INDEX\" as critical"
+  exit 1
+fi
+
+open "$INDEX"
