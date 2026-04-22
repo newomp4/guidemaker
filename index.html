@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guidemaker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <div class="brand">Guidemaker</div>
+
+    <div class="tools" role="toolbar" aria-label="Markup tools">
+      <button class="tool" data-tool="box"   title="Box (B)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="1" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Box</span>
+      </button>
+      <button class="tool" data-tool="arrow" title="Arrow (A)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 L20 6 M14 6 L20 6 L20 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Arrow</span>
+      </button>
+      <button class="tool" data-tool="text"  title="Text (T)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 H18 M12 6 V19 M9 19 H15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Text</span>
+      </button>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="actions">
+      <button class="ghost" id="undoBtn" title="Undo (⌘Z)">Undo</button>
+      <button class="ghost" id="clearBtn" title="Clear all markups">Clear</button>
+      <button class="ghost" id="newBtn" title="New image">New</button>
+      <button class="primary" id="exportBtn" title="Export PNG (⌘E)">Export</button>
+    </div>
+  </header>
+
+  <main id="stage">
+    <div id="dropzone" class="dropzone">
+      <div class="dz-inner">
+        <div class="dz-title">Drop a screenshot here</div>
+        <div class="dz-sub">or paste from clipboard (<span class="kbd">⌘V</span>) &middot; or <label class="link" for="fileInput">browse</label></div>
+        <input id="fileInput" type="file" accept="image/*" hidden />
+      </div>
+    </div>
+
+    <div id="canvasWrap" class="canvas-wrap" hidden>
+      <canvas id="canvas"></canvas>
+      <div id="textInput" class="text-input" contenteditable="true" spellcheck="false"></div>
+    </div>
+  </main>
+
+  <footer class="statusbar">
+    <div id="statusLeft" class="status">Ready</div>
+    <div class="hints">
+      <span><span class="kbd">B</span> Box</span>
+      <span><span class="kbd">A</span> Arrow</span>
+      <span><span class="kbd">T</span> Text</span>
+      <span><span class="kbd">⌘Z</span> Undo</span>
+      <span><span class="kbd">⌘E</span> Export</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
