@@ -11,6 +11,10 @@
     <div class="brand">Guidemaker</div>
 
     <div class="tools" role="toolbar" aria-label="Markup tools">
+      <button class="tool" data-tool="select" title="Select (V)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3 L5 19 L10 14 L13 20 L15 19 L12 13 L19 13 Z" fill="currentColor"/></svg>
+        <span>Select</span>
+      </button>
       <button class="tool" data-tool="box"   title="Box (B)">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="1" fill="none" stroke="currentColor" stroke-width="2"/></svg>
         <span>Box</span>
@@ -29,8 +33,8 @@
 
     <div class="actions">
       <button class="ghost" id="undoBtn" title="Undo (⌘Z)">Undo</button>
-      <button class="ghost" id="clearBtn" title="Clear all markups">Clear</button>
-      <button class="ghost" id="newBtn" title="New image">New</button>
+      <button class="ghost" id="clearBtn" title="Clear markups on this image">Clear</button>
+      <button class="ghost" id="newBtn" title="Remove all images">New</button>
       <button class="primary" id="exportBtn" title="Export PNG (⌘E)">Export</button>
     </div>
   </header>
@@ -38,9 +42,9 @@
   <main id="stage">
     <div id="dropzone" class="dropzone">
       <div class="dz-inner">
-        <div class="dz-title">Drop a screenshot here</div>
-        <div class="dz-sub">or paste from clipboard (<span class="kbd">⌘V</span>) &middot; or <label class="link" for="fileInput">browse</label></div>
-        <input id="fileInput" type="file" accept="image/*" hidden />
+        <div class="dz-title">Drop screenshots here</div>
+        <div class="dz-sub">or paste from clipboard (<span class="kbd">⌘V</span>) &middot; or <label class="link" for="fileInput">browse</label> &middot; multi-select works</div>
+        <input id="fileInput" type="file" accept="image/*" multiple hidden />
       </div>
     </div>
 
@@ -50,12 +54,19 @@
     </div>
   </main>
 
+  <div id="filmstrip" class="filmstrip" hidden>
+    <div class="filmstrip-scroll" id="filmstripScroll"></div>
+    <label class="filmstrip-add" for="fileInput" title="Add more images">+</label>
+  </div>
+
   <footer class="statusbar">
     <div id="statusLeft" class="status">Ready</div>
     <div class="hints">
+      <span><span class="kbd">V</span> Select</span>
       <span><span class="kbd">B</span> Box</span>
       <span><span class="kbd">A</span> Arrow</span>
       <span><span class="kbd">T</span> Text</span>
+      <span><span class="kbd">⌫</span> Delete</span>
       <span><span class="kbd">⌘Z</span> Undo</span>
       <span><span class="kbd">⌘E</span> Export</span>
     </div>

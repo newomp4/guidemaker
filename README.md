@@ -1,37 +1,43 @@
 # Guidemaker
 
-A fast, minimal screenshot markup tool for building SOPs. Drop in a screenshot, draw an orange box, arrow, or text over it, and export a PNG.
+A fast, minimal screenshot markup tool for building SOPs. Drop in screenshots, draw orange boxes, arrows, and text over them, then export a PNG for each.
 
 No build step. No dependencies. Open `index.html` in a browser.
 
 ## Features
 
-- **Drop, paste, or browse** for an image
-- **Box** tool — orange rectangle outline
-- **Arrow** tool — orange shaft + filled arrowhead
-- **Text** tool — Helvetica Neue Bold, orange
-- **Export** as PNG with one click (or `⌘E`)
+- **Drop, paste, or browse** for images — queue as many as you want
+- **Box** — orange rectangle outline
+- **Arrow** — orange shaft + filled arrowhead
+- **Text** — Helvetica Neue Bold, orange
+- **Resize & move** anything after you draw it (drag handles or the shape itself)
+- **Filmstrip** of all loaded images at the bottom — click to switch
+- **Export** the active image as PNG (⌘E)
 - Works offline. No server. No accounts.
 
 ## Keyboard shortcuts
 
 | Key | Action |
 | --- | --- |
+| `V` | Select tool (pick older shapes to edit) |
 | `B` | Box tool |
 | `A` | Arrow tool |
 | `T` | Text tool |
+| `Tab` / `Shift+Tab` | Next / previous image |
 | `⌘V` | Paste image from clipboard |
 | `⌘Z` | Undo last markup |
 | `⌘E` / `⌘S` | Export PNG |
+| `Delete` / `Backspace` | Remove selected shape |
+| `Escape` | Deselect / cancel text |
 | `Enter` | Commit text |
-| `Escape` | Cancel text |
 
 ## Workflow
 
-1. Take a screenshot in After Effects or Premiere (`⌘⇧⌃4` on macOS sends it to your clipboard).
-2. Switch to Guidemaker and hit `⌘V` — the image drops in immediately.
-3. Press `B`, `A`, or `T` and mark up.
-4. Press `⌘E` to download a PNG.
+1. Take screenshots (`⌘⇧⌃4` on macOS sends one to your clipboard).
+2. Switch to Guidemaker and hit `⌘V` — or drop multiple files at once.
+3. Press `B`, `A`, or `T` and mark up. New shapes are auto-selected, so you can drag the handles to resize or drag the body to move right away.
+4. Press `V` later to reselect and edit an older shape.
+5. Use the filmstrip to switch between images. Press `⌘E` to export whichever one is active.
 
 ## Usage
 
